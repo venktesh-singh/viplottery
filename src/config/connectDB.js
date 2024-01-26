@@ -7,7 +7,8 @@ const connection = mysql.createPool({
     database: 'u257446660_test',
     waitForConnections: true,
     connectionLimit: 10,
-    queueLimit: 0
+    queueLimit: 0,
+    connectTimeout: 30000, 
 });
    // "start": "pm2 start src/server.js"
 
