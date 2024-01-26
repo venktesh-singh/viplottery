@@ -1,10 +1,10 @@
 const mysql = require('mysql2/promise');
 
 const connection = mysql.createPool({
-    host: 'localhost',
-    user: 'root',
-    //password: 'Test@@##$12',
-    database: 'test'
+    host: '154.41.250.85',
+    user: 'u257446660_test',
+    password: 'Test@@##$12',
+    database: 'u257446660_test'
 });
    // "start": "pm2 start src/server.js"
 
