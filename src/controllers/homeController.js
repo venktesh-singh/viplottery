@@ -108,35 +108,37 @@ const riskAgreement = async(req, res) => {
     return res.render("member/about/riskAgreement.ejs"); 
 }
 
-const keFuMenu = async(req, res) => {
-    let auth = req.cookies.auth;
-
+const keFuMenu = async (req, res) => {
+    const auth = req.cookies.auth;
     const [users] = await connection.query('SELECT `level`, `ctv` FROM users WHERE token = ?', [auth]);
-
     let telegram = '';
-    if (users.length == 0) {
-        let [settings] = await connection.query('SELECT `telegram`, `cskh` FROM admin');
+
+    if (users.length === 0) {
+        const [settings] = await connection.query('SELECT `telegram`, `cskh` FROM admin');
         telegram = settings[0].telegram;
     } else {
-        if (users[0].level != 0) {
-            var [settings] = await connection.query('SELECT * FROM admin');
+        if (users[0].level !== 0) {
+            const [settings] = await connection.query('SELECT * FROM admin');
+            telegram = settings[0].telegram;
         } else {
-            var [check] = await connection.query('SELECT `telegram` FROM point_list WHERE phone = ?', [users[0].ctv]);
-            if (check.length == 0) {
-                var [settings] = await connection.query('SELECT * FROM admin');
+            const [check] = await connection.query('SELECT `telegram` FROM point_list WHERE phone = ?', [users[0].ctv]);
+
+            if (check.length === 0) {
+                const [settings] = await connection.query('SELECT * FROM admin');
+                telegram = settings[0].telegram;
             } else {
-                var [settings] = await connection.query('SELECT `telegram` FROM point_list WHERE phone = ?', [users[0].ctv]);
+                const [settings] = await connection.query('SELECT `telegram` FROM point_list WHERE phone = ?', [users[0].ctv]);
+                telegram = settings[0].telegram;
             }
         }
-        telegram = settings[0].telegram;
     }
-    
-    return res.render("keFuMenu.ejs", {telegram}); 
-}
 
-const myProfilePage = async(req, res) => {
-    return res.render("member/myProfile.ejs"); 
-}
+    return renderPage(res, "keFuMenu.ejs", { telegram }); 
+};
+
+const myProfilePage = async (req, res) => {
+    return renderPage(res, "member/myProfile.ejs"); 
+};
 
 module.exports = {
     homePage,
