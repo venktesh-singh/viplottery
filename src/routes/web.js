@@ -10,6 +10,8 @@ import {
   login,
   register,
 } from '../controllers/accountController.cjs';
+const accountController = require('../controllers/accountController.cjs');
+const { forGotPassword } = accountController;
 import * as homeController from '../controllers/homeController.js';
 import * as winGoController from '../controllers/winGoController.js';
 import * as userController from '../controllers/userController.js';
@@ -215,7 +217,7 @@ const initWebRouter = (app) => {
     
     return app.use('/', router); 
 }
-
+export { forGotPassword };
 module.exports = {
     initWebRouter,
 };
