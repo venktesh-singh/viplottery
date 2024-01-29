@@ -5,19 +5,19 @@ import e from "express";
 require('dotenv').config();
 
 
-const winGoPage = async (req, res) => {
+export const winGoPage = async (req, res) => {
     return res.render("bet/wingo/win.ejs");
 }
 
-const winGoPage3 = async (req, res) => {
+export const winGoPage3 = async (req, res) => {
     return res.render("bet/wingo/win3.ejs");
 }
 
-const winGoPage5 = async (req, res) => {
+export const winGoPage5 = async (req, res) => {
     return res.render("bet/wingo/win5.ejs");
 }
 
-const winGoPage10 = async (req, res) => {
+export const winGoPage10 = async (req, res) => {
     return res.render("bet/wingo/win10.ejs");
 }
 
@@ -49,7 +49,7 @@ function timerJoin(params = '') {
     return years + '-' + months + '-' + days + ' ' + hours + ':' + minutes + ':' + seconds;
 }
 
-const rosesPlus = async (auth, money) => {
+export const rosesPlus = async (auth, money) => {
     const [level] = await connection.query('SELECT * FROM level ');
     let level0 = level[0];
 
@@ -84,7 +84,7 @@ const rosesPlus = async (auth, money) => {
     }
 }
 
-const betWinGo = async (req, res) => {
+export const betWinGo = async (req, res) => {
     let { typeid, join, x, money } = req.body;
     let auth = req.cookies.auth;
 
@@ -249,7 +249,7 @@ const betWinGo = async (req, res) => {
     }
 }
 
-const listOrderOld = async (req, res) => {
+export const listOrderOld = async (req, res) => {
     let { typeid, pageno, pageto } = req.body;
 
     if (typeid != 1 && typeid != 3 && typeid != 5 && typeid != 10) {
@@ -309,7 +309,7 @@ const listOrderOld = async (req, res) => {
     });
 }
 
-const GetMyEmerdList = async (req, res) => {
+export const GetMyEmerdList = async (req, res) => {
     let { typeid, pageno, pageto } = req.body;
 
     // if (!pageno || !pageto) {
@@ -380,7 +380,7 @@ const GetMyEmerdList = async (req, res) => {
     });
 }
 
-const addWinGo = async (game) => {
+export const addWinGo = async (game) => {
     try {
         let join = '';
         if (game == 1) join = 'wingo';
@@ -441,7 +441,7 @@ const addWinGo = async (game) => {
 }
 
 
-const handlingWinGo1P = async (typeid) => {
+export const handlingWinGo1P = async (typeid) => {
 
     let game = '';
     if (typeid == 1) game = 'wingo';
