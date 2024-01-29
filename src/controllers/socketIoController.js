@@ -1,7 +1,7 @@
 const connection = require("../config/connectDB.js");
 require('dotenv').config();
 
-const sendMessageAdmin = (io) => {
+export const sendMessageAdmin = (io) => {
     io.on('connection', (socket) => {
         socket.on('data-server', (msg) => {
             io.emit('data-server', msg);
