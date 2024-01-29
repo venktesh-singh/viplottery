@@ -3,7 +3,6 @@ import configViewEngine from './config/configEngine.js';
 import routes from './routes/web.js';
 import webRoutes from './routes/web.js';
 import cronJobContronler from './controllers/cronJobContronler.js';
-import socketIoController from './controllers/socketIoController.js';
 import { cronJobGame1p } from './controllers/cronJobContronler.js';
 require('dotenv').config();
 let cookieParser = require('cookie-parser');
