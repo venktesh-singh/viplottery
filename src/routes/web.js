@@ -1,13 +1,13 @@
 import express from 'express';
-import accountController from '../controllers/accountController';
-import homeController from '../controllers/homeController';
-import winGoController from '../controllers/winGoController';
+import accountController from '../controllers/accountController.js';
+import homeController from '../controllers/homeController.js';
+import winGoController from '../controllers/winGoController.js';
 import userController from '../controllers/userController';
-import middlewareController from '../controllers/middlewareController';
-import adminController from '../controllers/adminController';
-import dailyController from '../controllers/dailyController';
-import k5Controller from '../controllers/k5Controller';
-import k3Controller from '../controllers/k3Controller';
+import middlewareController from '../controllers/middlewareController.js';
+import adminController from '../controllers/adminController.js';
+import dailyController from '../controllers/dailyController.js';
+import k5Controller from '../controllers/k5Controller.js';
+import k3Controller from '../controllers/k3Controller.js';
 let router = express.Router();
 
 const initWebRouter = (app) => {
