@@ -1,6 +1,6 @@
 import express from 'express';
 import configViewEngine from './config/configEngine.js';
-import routes from './routes/web.js';
+import * as routes from './routes/web.js';
 import webRoutes from './routes/web.js';
 //import cronJobContronler from './controllers/cronJobContronler.js';
 import { cronJobGame1p } from './controllers/cronJobContronler.js';
