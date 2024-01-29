@@ -3,19 +3,19 @@ const connection = require("../config/connectDB.js");
 require('dotenv').config();
 
 
-const K5DPage = async (req, res) => {
+export const K5DPage = async (req, res) => {
     return res.render("bet/5d/5d.ejs"); 
 }
 
-const K5DPage3 = async (req, res) => {
+export const K5DPage3 = async (req, res) => {
     return res.render("bet/wingo/win3.ejs");
 }
 
-const K5DPage5 = async (req, res) => {
+export const K5DPage5 = async (req, res) => {
     return res.render("bet/wingo/win5.ejs");
 }
 
-const K5DPage10 = async (req, res) => {
+export const K5DPage10 = async (req, res) => {
     return res.render("bet/wingo/win10.ejs");
 }
 
@@ -82,7 +82,7 @@ const rosesPlus = async (auth, money) => {
     }
 }
 
-const validateBet = async (join, list_join, x, money, game) => {
+export const validateBet = async (join, list_join, x, money, game) => {
     let checkJoin = isNumber(list_join);
     let checkX = isNumber(x);
     const checks = ['a', 'b', 'c', 'd', 'e', 'total'].includes(join);
@@ -117,7 +117,7 @@ const validateBet = async (join, list_join, x, money, game) => {
     return true;
 }
 
-const betK5D = async (req, res) => {
+export const betK5D = async (req, res) => {
     try {
         let { join, list_join, x, money, game } = req.body;
         let auth = req.cookies.auth;
@@ -187,7 +187,7 @@ const betK5D = async (req, res) => {
     }
 }
 
-const listOrderOld = async (req, res) => {
+export const listOrderOld = async (req, res) => {
     let { gameJoin, pageno, pageto } = req.body;
     let auth = req.cookies.auth;
 
@@ -239,7 +239,7 @@ const listOrderOld = async (req, res) => {
     });
 }
 
-const GetMyEmerdList = async (req, res) => {
+export const GetMyEmerdList = async (req, res) => {
     let { gameJoin, pageno, pageto } = req.body;
     let auth = req.cookies.auth;
 
@@ -306,7 +306,7 @@ function makeid(length) {
     return result;
 }
 
-const add5D = async(game) => {
+export const add5D = async(game) => {
     try {
         let join = '';
         if (game == 1) join = 'k5d'; 
@@ -546,7 +546,7 @@ async function funHanding(game) {
     }
 }
 
-const handling5D = async(typeid) => {
+export const handling5D = async(typeid) => {
 
     let game = Number(typeid);
 
