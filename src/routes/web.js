@@ -1,5 +1,15 @@
 import express from 'express';
-import accountController from '../controllers/accountController.js';
+//import accountController from '../controllers/accountController.js';
+import {
+  loginPage,
+  registerPage,
+  forgotPage,
+  verifyCode,
+  verifyCodePass,
+  forGotPassword,
+  login,
+  register,
+} from '../controllers/accountController.js';
 import homeController from '../controllers/homeController.js';
 import winGoController from '../controllers/winGoController.js';
 import userController from '../controllers/userController.js';
