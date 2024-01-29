@@ -1,7 +1,7 @@
 const connection = require("../config/connectDB.js");
 import winGoController from "./winGoController.js";
 import k5Controller from "./k5Controller.js";
-import k3Controller from "./k3Controller.js";
+import * as k3Controller from "./k3Controller.js";
 import cron from 'node-cron';
 
 export const cronJobGame1p = (io) => {
