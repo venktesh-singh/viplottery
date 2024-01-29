@@ -10,14 +10,14 @@ import {
   login,
   register,
 } from '../controllers/accountController.js';
-import homeController from '../controllers/homeController.js';
-import winGoController from '../controllers/winGoController.js';
-import userController from '../controllers/userController.js';
-import middlewareController from '../controllers/middlewareController.js';
-import adminController from '../controllers/adminController.js';
-import dailyController from '../controllers/dailyController.js';
-import k5Controller from '../controllers/k5Controller.js';
-import k3Controller from '../controllers/k3Controller.js';
+import * as homeController from '../controllers/homeController.js';
+import * as winGoController from '../controllers/winGoController.js';
+import * as userController from '../controllers/userController.js';
+import * as middlewareController from '../controllers/middlewareController.js';
+import * as adminController from '../controllers/adminController.js';
+import * as dailyController from '../controllers/dailyController.js';
+import * as k5Controller from '../controllers/k5Controller.js';
+import * as k3Controller from '../controllers/k3Controller.js';
 let router = express.Router();
 
 const initWebRouter = (app) => {
