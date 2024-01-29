@@ -2,7 +2,7 @@ import express from 'express';
 import accountController from '../controllers/accountController.js';
 import homeController from '../controllers/homeController.js';
 import winGoController from '../controllers/winGoController.js';
-import userController from '../controllers/userController';
+import userController from '../controllers/userController.js';
 import middlewareController from '../controllers/middlewareController.js';
 import adminController from '../controllers/adminController.js';
 import dailyController from '../controllers/dailyController.js';
