@@ -1,3 +1,4 @@
+// Use CommonJS syntax
 const mysql = require('mysql2/promise');
 
 const connection = mysql.createPool({
@@ -10,6 +11,5 @@ const connection = mysql.createPool({
     queueLimit: 0,
     connectTimeout: 30000, 
 });
-   // "start": "pm2 start src/server.js"
 
-export default connection;
+module.exports = connection;
