@@ -7,7 +7,7 @@ require('dotenv').config();
 
 let timeNow = Date.now();
 
-const randomString = (length) => {
+export const randomString = (length) => {
     var result = '';
     var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
     var charactersLength = characters.length;
@@ -19,16 +19,16 @@ const randomString = (length) => {
 }
 
 
-const randomNumber = (min, max) => {
+export const randomNumber = (min, max) => {
     return String(Math.floor(Math.random() * (max - min + 1)) + min);
 }
 
-const isNumber = (params) => {
+export const isNumber = (params) => {
     let pattern = /^[0-9]*\d$/;
     return pattern.test(params);
 }
 
-const ipAddress = (req) => {
+export const ipAddress = (req) => {
     let ip = '';
     if (req.headers['x-forwarded-for']) {
         ip = req.headers['x-forwarded-for'].split(",")[0];
@@ -40,25 +40,25 @@ const ipAddress = (req) => {
     return ip;
 }
 
-const timeCreate = () => {
+export const timeCreate = () => {
     const d = new Date();
     const time = d.getTime();
     return time;
 }
 
-const loginPage = async (req, res) => {
+export const loginPage = async (req, res) => {
     return res.render("account/login.ejs");
 }
 
-const registerPage = async (req, res) => {
+export const registerPage = async (req, res) => {
     return res.render("account/register.ejs");
 }
 
-const forgotPage = async (req, res) => {
+export const forgotPage = async (req, res) => {
     return res.render("account/forgot.ejs");
 }
 
-const login = async (req, res) => {
+export const login = async (req, res) => {
     let { username, pwd } = req.body;
 
     if (!username || !pwd || !username) {//!isNumber(username)
@@ -101,7 +101,7 @@ const login = async (req, res) => {
 
 }
 
-const register = async (req, res) => {
+export const register = async (req, res) => {
     let now = new Date().getTime();
     let { username, pwd, invitecode, otp } = req.body;
     let id_user = randomNumber(10000, 99999);
@@ -200,7 +200,7 @@ const register = async (req, res) => {
 
 }
 
-const verifyCode = async (req, res) => {
+export const verifyCode = async (req, res) => {
     let phone = req.body.phone;
     let now = new Date().getTime();
     let timeEnd = (+new Date) + 1000 * (60 * 2 + 0) + 500;
@@ -254,7 +254,7 @@ const verifyCode = async (req, res) => {
 
 }
 
-const verifyCodePass = async (req, res) => {
+export const verifyCodePass = async (req, res) => {
     let phone = req.body.phone;
     let now = new Date().getTime();
     let timeEnd = (+new Date) + 1000 * (60 * 2 + 0) + 500;
