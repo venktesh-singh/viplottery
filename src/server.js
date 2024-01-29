@@ -9,7 +9,7 @@ const app = express();
 const server = require('http').createServer(app);
 const io = require('socket.io')(server);
 
-const port = process.env.PORT || 3306;
+///const port = process.env.PORT || 3306;
 
 app.use(cookieParser());
 // app.use(express.static('public'));
