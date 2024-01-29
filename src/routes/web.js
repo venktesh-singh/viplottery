@@ -9,7 +9,7 @@ import {
   forGotPassword,
   login,
   register,
-} from '../controllers/accountController.js';
+} from '../controllers/accountController.cjs';
 import * as homeController from '../controllers/homeController.js';
 import * as winGoController from '../controllers/winGoController.js';
 import * as userController from '../controllers/userController.js';
