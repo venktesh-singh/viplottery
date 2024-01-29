@@ -1,5 +1,5 @@
 const connection = require("../config/connectDB.js");
-import winGoController from "./winGoController.js";
+import * as winGoController from "./winGoController.js";
 import * as k5Controller from "./k5Controller.js";
 import * as k3Controller from "./k3Controller.js";
 import cron from 'node-cron';
