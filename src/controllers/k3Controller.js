@@ -1,4 +1,4 @@
-import connection from "../config/connectDB.js";
+const connection = require("../config/connectDB.js");
 require('dotenv').config();
 
 const K3Page = async (req, res) => {
