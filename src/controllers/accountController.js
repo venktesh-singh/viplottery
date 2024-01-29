@@ -300,7 +300,7 @@ const verifyCodePass = async (req, res) => {
 
 }
 
-const forGotPassword = async (req, res) => {
+export const forGotPassword = async (req, res) => {
     let username = req.body.username;
     let otp = req.body.otp;
     let pwd = req.body.pwd;
