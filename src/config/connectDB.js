@@ -1,6 +1,5 @@
 // Use CommonJS syntax
 const mysql = require('mysql2/promise');
-import cronJobContronler from './controllers/cronJobContronler.js';
 
 const connection = mysql.createPool({
     host: '68.178.145.111',
