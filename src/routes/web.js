@@ -1,5 +1,5 @@
 import express from 'express';
-//import accountController from '../controllers/accountController.js';
+//import accountController from '../controllers/accountController.cjs';
 import {
   loginPage,
   registerPage,
