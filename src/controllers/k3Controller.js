@@ -1,7 +1,7 @@
 const connection = require("../config/connectDB.js");
 require('dotenv').config();
 
-const K3Page = async (req, res) => {
+export const K3Page = async (req, res) => {
     return res.render("bet/k3/k3.ejs");
 }
 
@@ -32,7 +32,7 @@ function timerJoin(params = '') {
     return years + '-' + months + '-' + days + ' ' + hours + ':' + minutes + ':' + seconds;
 }
 
-const rosesPlus = async (auth, money) => {
+export const rosesPlus = async (auth, money) => {
     const [level] = await connection.query('SELECT * FROM level ');
     let level0 = level[0];
 
@@ -67,7 +67,7 @@ const rosesPlus = async (auth, money) => {
     }
 }
 
-const validateBet = async (join, list_join, x, money, game) => {
+export const validateBet = async (join, list_join, x, money, game) => {
     let checkJoin = isNumber(list_join);
     let checkX = isNumber(x);
     const checks = ['a', 'b', 'c', 'd', 'e', 'total'].includes(join);
@@ -102,7 +102,7 @@ const validateBet = async (join, list_join, x, money, game) => {
     return true;
 }
 
-const betK3 = async (req, res) => {
+export const betK3 = async (req, res) => {
     try {
         let { listJoin, game, gameJoin, xvalue, money } = req.body;
         let auth = req.cookies.auth;
@@ -256,7 +256,7 @@ function makeid(length) {
     return result;
 }
 
-const addK3 = async (game) => {
+export const addK3 = async (game) => {
     try {
         let join = '';
         if (game == 1) join = 'k3d';
@@ -991,7 +991,7 @@ async function plusMoney(game) {
     }
 }
 
-const handlingK3 = async (typeid) => {
+export const handlingK3 = async (typeid) => {
 
     let game = Number(typeid);
 
@@ -1000,7 +1000,7 @@ const handlingK3 = async (typeid) => {
     await plusMoney(game);
 }
 
-const listOrderOld = async (req, res) => {
+export const listOrderOld = async (req, res) => {
     let { gameJoin, pageno, pageto } = req.body;
     let auth = req.cookies.auth;
 
@@ -1052,7 +1052,7 @@ const listOrderOld = async (req, res) => {
     });
 }
 
-const GetMyEmerdList = async (req, res) => {
+export const GetMyEmerdList = async (req, res) => {
     let { gameJoin, pageno, pageto } = req.body;
     let auth = req.cookies.auth;
 
