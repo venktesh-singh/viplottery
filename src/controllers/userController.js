@@ -11,7 +11,7 @@ let timeNow = Date.now();
 const randomNumber = (min, max) => {
     return String(Math.floor(Math.random() * (max - min + 1)) + min);
 }
-const verifyCode = async (req, res) => {
+export const verifyCode = async (req, res) => {
     let auth = req.cookies.auth;
     let now = new Date().getTime();
     let timeEnd = (+new Date) + 1000 * (60 * 2 + 0) + 500;
@@ -48,7 +48,7 @@ const verifyCode = async (req, res) => {
     }
 }
 
-const userInfo = async (req, res) => {
+export const userInfo = async (req, res) => {
     let auth = req.cookies.auth;
 
     if (!auth) {
@@ -96,7 +96,7 @@ const userInfo = async (req, res) => {
 
 }
 
-const changeUser = async (req, res) => {
+export const changeUser = async (req, res) => {
     let auth = req.cookies.auth;
     let name = req.body.name;
     let type = req.body.type;
@@ -128,7 +128,7 @@ const changeUser = async (req, res) => {
 
 }
 
-const changePassword = async (req, res) => {
+export const changePassword = async (req, res) => {
     let auth = req.cookies.auth;
     let password = req.body.password;
     let newPassWord = req.body.newPassWord;
@@ -174,7 +174,7 @@ const changePassword = async (req, res) => {
 
 }
 
-const checkInHandling = async (req, res) => {
+export const checkInHandling = async (req, res) => {
     let auth = req.cookies.auth;
     let data = req.body.data;
 
@@ -417,7 +417,7 @@ function timerJoin(params = '') {
     return years + " - " + months + " - " + days;
 }
 
-const promotion = async (req, res) => {
+export const promotion = async (req, res) => {
     let auth = req.cookies.auth;
     if (!auth) {
         return res.status(200).json({
@@ -470,7 +470,7 @@ if(userInfo.bonus<totalbonus){
 }
 
 
-const myTeam = async (req, res) => {
+export const myTeam = async (req, res) => {
     let auth = req.cookies.auth;
     if (!auth) {
         return res.status(200).json({
@@ -498,7 +498,7 @@ const myTeam = async (req, res) => {
 
 }
 
-const listMyTeam = async (req, res) => {
+export const listMyTeam = async (req, res) => {
     let auth = req.cookies.auth;
     if (!auth) {
         return res.status(200).json({
@@ -541,7 +541,7 @@ const listMyTeam = async (req, res) => {
 
 }
 
-const recharge = async (req, res) => {
+export const recharge = async (req, res) => {
     let auth = req.cookies.auth;
     let rechid = req.cookies.orderid;
     let money = req.body.money;
@@ -705,7 +705,7 @@ const recharge = async (req, res) => {
 
 }
 
-const addBank = async (req, res) => {
+export const addBank = async (req, res) => {
     let auth = req.cookies.auth;
     let name_bank = req.body.name_bank;
     let name_user = req.body.name_user;
@@ -786,7 +786,7 @@ const addBank = async (req, res) => {
 
 }
 
-const infoUserBank = async (req, res) => {
+export const infoUserBank = async (req, res) => {
     let auth = req.cookies.auth;
     if (!auth) {
         return res.status(200).json({
@@ -848,7 +848,7 @@ const infoUserBank = async (req, res) => {
     });
 }
 
-const withdrawal3 = async (req, res) => {
+export const withdrawal3 = async (req, res) => {
     let auth = req.cookies.auth;
     let money = req.body.money;
     let password = req.body.password;
@@ -966,7 +966,7 @@ const withdrawal3 = async (req, res) => {
 
 }
 
-const recharge2 = async (req, res) => {
+export const recharge2 = async (req, res) => {
     let auth = req.cookies.auth;
     let orderid = req.cookies.orderid;
     if (!auth) {
@@ -1005,7 +1005,7 @@ const recharge2 = async (req, res) => {
 
 }
 
-const listRecharge = async (req, res) => {
+export const listRecharge = async (req, res) => {
     let auth = req.cookies.auth;
     if(!auth) {
         return res.status(200).json({
@@ -1032,7 +1032,7 @@ const listRecharge = async (req, res) => {
     });
 }
 
-const search = async (req, res) => {
+export const search = async (req, res) => {
     let auth = req.cookies.auth;
     let phone = req.body.phone;
     if (!auth) {
@@ -1094,7 +1094,7 @@ const search = async (req, res) => {
 }
 
 
-const listWithdraw = async (req, res) => {
+export const listWithdraw = async (req, res) => {
     let auth = req.cookies.auth;
     if (!auth) {
         return res.status(200).json({
@@ -1121,7 +1121,7 @@ const listWithdraw = async (req, res) => {
     });
 }
 
-const useRedenvelope = async (req, res) => {
+export const useRedenvelope = async (req, res) => {
     let auth = req.cookies.auth;
     let code = req.body.code;
     if (!auth || !code) {
@@ -1173,7 +1173,7 @@ const useRedenvelope = async (req, res) => {
     }
 }
 
-const callback_bank = async (req, res) => {
+export const callback_bank = async (req, res) => {
     let transaction_id = req.body.transaction_id;
     let client_transaction_id = req.body.client_transaction_id;
     let amount = req.body.amount;
