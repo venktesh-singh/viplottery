@@ -1,5 +1,5 @@
 import express from 'express';
-import configViewEngine from './config/configEngine';
+import configViewEngine from './config/configEngine.js';
 import routes from './routes/web';
 import cronJobContronler from './controllers/cronJobContronler';
 import socketIoController from './controllers/socketIoController';
