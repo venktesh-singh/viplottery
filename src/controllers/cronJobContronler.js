@@ -4,7 +4,7 @@ import k5Controller from "./k5Controller.js";
 import k3Controller from "./k3Controller.js";
 import cron from 'node-cron';
 
-const cronJobGame1p = (io) => {
+export const cronJobGame1p = (io) => {
      cron.schedule('*/1 * * * *', async() => {
          await winGoController.addWinGo(1);
          await winGoController.handlingWinGo1P(1);
