@@ -6,7 +6,7 @@ import {
   forgotPage,
   verifyCode,
   verifyCodePass,
-  forGotPassword,
+  forGotPassword, 
   login,
   register,
 } from '../controllers/accountController.cjs';
