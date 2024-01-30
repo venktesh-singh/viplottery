@@ -1,6 +1,6 @@
 const connection = require("../config/connectDB.js");
 const jwt = require('jsonwebtoken');
-import md5 from "md5";
+const md5 = require('md5');
 import request from 'request';
 import e from "express";
 require('dotenv').config();
