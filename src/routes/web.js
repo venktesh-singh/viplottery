@@ -1,15 +1,16 @@
 import express from 'express';
 //import accountController from '../controllers/accountController.cjs';
-import {
+import accountController from '../controllers/accountController.cjs';
+const {
   loginPage,
   registerPage,
   forgotPage,
   verifyCode,
   verifyCodePass,
-  forGotPassword, 
+  forGotPassword,
   login,
   register,
-} from '../controllers/accountController.cjs';
+} = accountController;
 import * as homeController from '../controllers/homeController.js';
 import * as winGoController from '../controllers/winGoController.js';
 import * as userController from '../controllers/userController.js';
