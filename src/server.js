@@ -1,5 +1,6 @@
 import express from 'express';
 import configViewEngine from './config/configEngine.js';
+import bodyParser from 'body-parser';
 import * as routes from './routes/web.js';
 import * as webRoutes from './routes/web.js';
 //import cronJobContronler from './controllers/cronJobContronler.js';
@@ -11,6 +12,9 @@ const server = require('http').createServer(app);
 const io = require('socket.io')(server);
 
 const port = process.env.PORT || 3306;
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 app.use(cookieParser());
 // app.use(express.static('public'));
